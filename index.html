@@ -17,13 +17,21 @@
         /> 
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body class="container-fluid">
         <header>
         </header>
         <main>
-            <h1 id="firstOptionButton" class="selectionBox"></h1>
-            <h1 id="secondOptionButton" class="selectionBox"></h1>
-            <h1 id="thirdOptionButton" class="selectionBox"></h1>
+            <div class="playerHealthBackdrop mx-2" id="playerHealthBackdrop">
+                <p>word</p>
+                <div class="playerHealthLost">
+                    <div class="playerHealth" id="playerHealth"></div>
+                </div>
+            </div>
+            <div class="row mx-2">
+                <h1 id="firstOptionButton" class="selectionBox"></h1>
+                <h1 id="secondOptionButton" class="selectionBox"></h1>
+                <h1 id="thirdOptionButton" class="selectionBox"></h1>
+            </div>
         </main>
         <footer>
         </footer>
