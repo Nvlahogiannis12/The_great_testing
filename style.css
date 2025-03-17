@@ -12,7 +12,7 @@
 }
 .playerHealth {
     height: 20px;
-    width: 200px;
+    width: 100%;
     background-color:maroon;
     border-radius:20px;
 } 

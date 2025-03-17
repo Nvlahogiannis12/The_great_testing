@@ -1,5 +1,5 @@
 //Select Player Action Option
-let playerActionsOptions = ["Attack", "Shop", "Skip"];
+let playerActionsOptions = ["Attack", "Damage", "Skip"];
 let index = 0;
 
 window.addEventListener("keydown", (event) => {
