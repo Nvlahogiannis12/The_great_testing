@@ -1,7 +1,11 @@
 //Select Player Action Option
-let playerActionsOptions = ["Attack", "Damage", "Skip"];
+let playerTurn = true
+let playerActionsOptions = ["Attack", "Damage", "Option",];
 let index = 0;
+isPlayerTurn()
 
+function isPlayerTurn(){
+if(playerTurn === true){
 window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight" || event.key === "ArrowDown") {
     index++;
@@ -30,7 +34,9 @@ document.getElementById("secondOptionButton").innerHTML =
 document.getElementById("thirdOptionButton").innerHTML =
   playerActionsOptions[2];
 
-//ENTER KEY EVENT LISTENER
+
+
+//ENTER KEY EVENT LISTENER & Move Output
 let playerBattleOptionMenu = true;
 window.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -38,18 +44,67 @@ window.addEventListener("keydown", (event) => {
       if (index === 0) {
         alert("one");
       } else if (index === 1) {
-        alert("two");
+        if(playerHP <= 0){
+          //return stops function
+          playerHP = 0;
+          return;
+        }
+        playerHP -= 10;
+        gameWin();
+        alert(playerHP);
       } else if (index === 2) {
-        alert("three");
+        playerHP = 0;
+        gameWin();
       }
     }
   }
 });
-
 //  GETS BUTTON OPTIONS TO STOP FUNCTIONING!!!
 //function words(){
 //    playerBattleOptionMenu = false
 //}
+} else if(playerTurn === false){
+  alert('working...')
+}
+}
+
 
 
 //HEALTH SYSTEMS
+let playerHP = 100;
+
+function gameWin() {
+  let healthbar = document.getElementById("playerHealth");
+        healthbar.setAttribute("style", `width: ${playerHP}%;`);
+  if (playerHP <= 0) {
+    alert("GAME OVER");
+  }
+}
+
+
+
+//opponent turn stuff
+
+/*
+function(){
+disable player stuff
+delay
+opponent move
+re able moves
+}
+*/
+
+
+
+//DEBUG STUFF (KEEP ON BOTTOM OF YOU'RE CODE):
+window.addEventListener("keydown", (event) => {
+  if(event.key === '!'){
+   debugMode()
+   alert("Debug Mode Active")
+  }
+})
+
+function debugMode(){
+  playerTurn = false
+  isPlayerTurn()
+}
