@@ -1,32 +1,26 @@
-.playerHealthBackdrop{
-     height: 50px;
-     width: 250px;
-     background-color: silver;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    z-index: -2;
-    border-radius:5px;
-}
-.playerHealth {
-    height: 20px;
-    width: 100%;
-    background-color:maroon;
-    border-radius:20px;
+body{
+    height:100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
 }
 
-p {
-    all: unset;
+#gridMap {
+  margin:auto;
+  width: 250px;
+  height: auto;
 }
-.playerHealthLost {
-    height:20px;
-    width: 200px;
-    background-color: black;
-    z-index: -1;
-    border-radius:20px;
+
+.grid-cell {
+  background-color: #e0e0e0;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  aspect-ratio: 1/1;
 }
-* {
-    position:relative;
+.selected{
+    background-color: red;
+    color:white;
 }
