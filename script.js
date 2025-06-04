@@ -1,9 +1,11 @@
 let isDebug = false;
-
-mapGame(20, 10);
+let x = 0;
+let y = 0;
+mapGame(20, 20);
+updateLocation();
 
 function mapGame(height, width) {
-  const gridArray = Array.from({length: height}, (_,i) => new Array(width))
+ // const gridArray = Array.from({length: height}, (_,i) => new Array(width))
   const container = document.getElementById("gridMap");
   container.innerHTML = ""; // Clear previous grid if any
   container.style.display = "grid";
@@ -42,8 +44,25 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-//Select Cordnate
-document.getElementById("1_8").classList.add('selected')
+//Select Cordnate (document.getElementById("1_8").classList.add('selected'))
+function updateLocation(){
+document.getElementById(`${y}_${x}`).classList.add('selected')
+}
+window.addEventListener("keydown", gridMovement)
+function gridMovement(event) {
+  if (event.key === "ArrowRight"){
+    x++ 
+    }else if (event.key === "ArrowLeft"){
+      x--
+    } 
+  else if (event.key === "ArrowDown"){
+    y++
+  }
+  else if (event.key === "ArrowUp"){
+    y--
+  }
+  updateLocation();
+}
 
 //create 2d array for grid real time
 //create js object for each cell
